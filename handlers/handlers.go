@@ -7,7 +7,6 @@ import (
 
 	"github.com/SergioPeralta22/Mockup-Bird/middlew"
 	"github.com/SergioPeralta22/Mockup-Bird/routers"
-
 	"github.com/gorilla/mux"
 	"github.com/rs/cors"
 )
@@ -17,6 +16,7 @@ func Manejadores() {
 	router := mux.NewRouter()
 
 	router.HandleFunc("/registro", middlew.ChequeoBD(routers.Registro)).Methods("POST")
+
 	PORT := os.Getenv("PORT")
 	if PORT == "" {
 		PORT = "8080"
